@@ -3,18 +3,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-/**
- * IMPORTANT:
- * ---------
- * Do not manually edit this file if you'd like to host your server on Colyseus Cloud
- *
- * If you're self-hosting (without Colyseus Cloud), you can manually
- * instantiate a Colyseus Server as documented here:
- *
- * See: https://docs.colyseus.io/server/api/#constructor-options
- */
-const tools_1 = require("@colyseus/tools");
-// Import Colyseus config
-const app_config_1 = __importDefault(require("./app.config"));
-// Create and listen on 2567 (or PORT environment variable.)
-(0, tools_1.listen)(app_config_1.default);
+const express_1 = __importDefault(require("express"));
+const http_1 = require("http");
+const cors_1 = __importDefault(require("cors"));
+const colyseus_1 = require("colyseus");
+const PlayRoom_1 = require("./rooms/PlayRoom");
+const app = (0, express_1.default)();
+app.use(express_1.default.json());
+app.use((0, cors_1.default)());
+const gameServer = new colyseus_1.Server({
+    server: (0, http_1.createServer)(app),
+});
+gameServer.define('play_room', PlayRoom_1.PlayRoom);
+gameServer.listen(3000);
