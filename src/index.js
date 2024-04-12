@@ -13,5 +13,5 @@ const server = new Server({
 })
 
 server.listen(process.env.PORT, () => {
-	console.log('Listening ro clients')
+	console.log(`Listening to clients in port ${process.env.PORT}`)
 })
