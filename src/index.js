@@ -12,6 +12,9 @@ const server = new Server({
 	server: require('http').createServer(app)
 })
 
-server.listen(process.env.PORT, () => {
-	console.log(`Listening to clients in port ${process.env.PORT}`)
+const serverPort = process.env.PORT || 3000
+const hostName = process.env.SERVER_HOST || 'localhost'
+
+server.listen(serverPort, () => {
+	console.log(`Listening to clients in ${hostName}:${serverPort}`)
 })
