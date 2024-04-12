@@ -12,6 +12,6 @@ const server = new Server({
 	server: require('http').createServer(app)
 })
 
-server.listen(3000, '54.191.253.12', undefined, () => {
-	console.log('Listening on 54.191.253.12:3000')
+server.listen(process.env.PORT, () => {
+	console.log('Listening ro clients')
 })
