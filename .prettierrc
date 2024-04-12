@@ -1,0 +1,9 @@
+{
+	"semi": false,
+	"useTabs": true,
+	"tabWidth": 3,
+	"trailingComma": "none",
+	"singleQuote": true,
+	"endOfLine": "lf",
+	"plugins": ["prettier-plugin-packagejson"]
+}

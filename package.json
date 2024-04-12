@@ -1,8 +1,21 @@
 {
-  "dependencies": {
-    "@colyseus/monitor": "^0.15.6",
-    "colyseus": "^0.15.15",
-    "cors": "^2.8.5",
-    "express": "^4.19.2"
-  }
+	"name": "attack-squad-backend",
+	"main": "src/index.js",
+	"scripts": {
+		"lint": "prettier --write ."
+	},
+	"dependencies": {
+		"@colyseus/monitor": "^0.15.6",
+		"@colyseus/schema": "^2.0.30",
+		"colyseus": "^0.15.15",
+		"cors": "^2.8.5",
+		"express": "^4.19.2",
+		"prettier-plugin-packagejson": "^2.5.0"
+	},
+	"devDependencies": {
+		"prettier": "^3.2.5"
+	},
+	"engines": {
+		"node": ">=16.0.0"
+	}
 }
